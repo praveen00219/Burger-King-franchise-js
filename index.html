@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger King</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+
+<body class="font-sans">
+    <section>
+        <h1 class="text-4xl font-bold text-white text-center pt-4 ">Burger King Virtual Ordering System</h1>
+        <div class="container mx-auto p-8">
+            <div class="bg-white p-5 rounded-lg shadow-lg max-w-lg mx-auto">
+                <div class="flex justify-between gap-6 items-center">
+                    <h2 class="text-xl font-semibold text-red-600 mb-4">Select Your Food</h2>
+                    <h2 class="text-xl font-semibold text-red-600 mb-4">Quantity</h2>
+                </div>
+                <div class="space-y-4">
+                    <label class="flex items-center justify-between gap-8">
+                        <div class="flex items-center">
+                            <input type="checkbox" value="Burger" data-price="5.99" class="mr-2">
+                            <img src="/assets/img/burger-img.jpg" alt="Burger"
+                                class="w-16 h-16 object-cover mr-2 rounded shadow-lg">
+                            <div>
+                                <p>Burger </p>
+                                <p class="text-sm text-green-500">Price: $5.99</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <button class="decrease-qty bg-gray-200 p-2 rounded">-</button>
+                            <input type="number" min="1" value="1"
+                                class="quantity-input w-16 text-center border rounded mx-2">
+                            <button class="increase-qty bg-gray-200 p-2 rounded">+</button>
+                        </div>
+                    </label>
+                    <label class="flex items-center justify-between gap-8">
+                        <div class="flex items-center">
+                            <input type="checkbox" value="Fries" data-price="2.99" class="mr-2">
+                            <img src="/assets/img/fries.jpg" alt="Fries"
+                                class="w-16 h-16 object-cover mr-2 rounded shadow-lg">
+                            <div>
+                                <p>Fries </p>
+                                <p class="text-sm text-green-500">Price: $2.99</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <button class="decrease-qty bg-gray-200 p-2 rounded">-</button>
+                            <input type="number" min="1" value="1"
+                                class="quantity-input w-16 text-center border rounded mx-2">
+                            <button class="increase-qty bg-gray-200 p-2 rounded">+</button>
+                        </div>
+                    </label>
+                    <label class="flex items-center justify-between gap-8">
+                        <div class="flex items-center">
+                            <input type="checkbox" value="Coke" data-price="1.99" class="mr-2">
+                            <img src="/assets/img/coke.jpg" alt="Coke"
+                                class="w-16 h-16 object-cover mr-2 rounded shadow-lg">
+                            <div>
+                                <p>Coke </p>
+                                <p class="text-sm text-green-500">Price: $1.99</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <button class="decrease-qty bg-gray-200 p-2 rounded">-</button>
+                            <input type="number" min="1" value="1"
+                                class="quantity-input w-16 text-center border rounded mx-2">
+                            <button class="increase-qty bg-gray-200 p-2 rounded">+</button>
+                        </div>
+                    </label>
+                    <label class="flex items-center justify-between gap-8">
+                        <div class="flex items-center">
+                            <input type="checkbox" value="Nuggets" data-price="3.99" class="mr-2">
+                            <img src="/assets/img/Nuggets.jpg" alt="Nuggets"
+                                class="w-16 h-16 object-cover mr-2 rounded shadow-lg">
+                            <div>
+                                <p>Nuggets </p>
+                                <p class="text-sm text-green-500">Price: $3.99</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <button class="decrease-qty bg-gray-200 p-2 rounded">-</button>
+                            <input type="number" min="1" value="1"
+                                class="quantity-input w-16 text-center border rounded mx-2">
+                            <button class="increase-qty bg-gray-200 p-2 rounded">+</button>
+                        </div>
+                    </label>
+                </div>
+                <button id="orderButton"
+                    class="mt-6 w-full bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition duration-200">
+                    Order Food
+                </button>
+            </div>
+
+            <div>
+                <div id="loading" class="text-center text-red-600 mt-8 hidden">
+                    <p class="text-xl">Processing your order...</p>
+                </div>
+
+                <audio id="orderSoundNotification" src="/assets/Order Placed Sound/system-notification-199277.mp3"
+                    preload="auto"></audio>
+
+                <div id="orderDetails" class="text-center mt-8 flex flex-col justify-center items-center hidden">
+                    <p id="orderId" class="w-2/4 text-lg font-bold"></p>
+                    <div id="foodImages" class="flex justify-center items-center space-x-4 mt-4">
+                        <!-- Images will be dynamically inserted here -->
+                    </div>
+                    <p id="totalCost" class="text-lg bg-white px-3 py-1 rounded-lg text-gray-700 font-bold mt-5"></p>
+                </div>
+            </div>
+        </div>
+
+        <audio id="orderSound" src="/assets/Order Placed Sound/cash-register-fake-88639.mp3" preload="auto"></audio>
+    </section>
+    <script src="/assets/script.js"></script>
+</body>
+
+</html>
