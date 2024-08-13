@@ -67,7 +67,7 @@ document.getElementById("orderButton").addEventListener("click", () => {
       document.getElementById("orderSoundNotification").play();
       const orderId = Math.floor(Math.random() * 9000000000000) + 1000000000000;
       alert(
-        `Your order number is ${orderId}. It will be delivered in 2 - 5 business days.`
+        `Your order number is ${orderId}. It will be delivered in 5-10 minutes.`
       );
     }, 2000);
 
